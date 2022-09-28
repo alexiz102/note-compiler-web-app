@@ -1,0 +1,79 @@
+$base-background: skyblue;
+$border-color: #000;
+$container-bg-color: #fff;
+$area-background: rgb(230, 249, 255);
+$title-color: yellow;
+
+@mixin mp($size) {
+    @media only screen and (max-width: $size) {
+        @content
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    @include mp(400px) {
+        font-size: 15px;
+    }
+}
+
+body {
+    padding: 2rem;
+    background-color: $base-background;
+}
+
+section {
+    background-color: $container-bg-color;
+    border: 1px solid $border-color;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+#web-title {
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+button {
+    border: 1px solid $border-color;
+    border-radius: 15px;
+    padding: .20rem;
+    font-size: .75rem;
+}
+
+button:hover, button:focus {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    transition: .2s;
+    cursor: pointer;
+    background-color: orange;
+}
+
+#save-button:active {
+    background-color: green;
+    color: #fff;
+    transition: .1s;
+}
+
+#clear:active {
+    background-color: red;
+    color: white;
+    transition: .1s;
+}
+
+footer {
+    font-size: .50rem;
+}

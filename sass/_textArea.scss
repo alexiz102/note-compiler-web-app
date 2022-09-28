@@ -1,0 +1,36 @@
+#text-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0px 15px 15px 0px;
+    background-color: $area-background;
+
+    #text-input {
+        height: 100%;
+        resize: none;
+        margin: .5rem;
+    }
+
+    .input:focus {
+        box-shadow: 3px 5px 2px rgba($color: #000000, $alpha: .3);
+        outline: none;
+    }
+
+    #text-details {
+        width: 100%;
+        margin: .5rem .5rem 0rem .5rem;
+        display: flex;
+        @include mp(400px) {
+            flex-direction: column;
+
+            #button-group {
+                margin-top: .2rem;
+            }
+        }
+
+        #text-title {
+            width: 60%;
+            margin-right: .25rem;
+        }
+    }
+}
